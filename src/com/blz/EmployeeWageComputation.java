@@ -6,16 +6,21 @@ public class EmployeeWageComputation {
 		
 		//Constant
 				int IS_PRESENT = 1;
+				int IS_PART_TIME = 2;
 				int SALARY_PER_HOUR = 20;
 				//Variables
-				double empCheck = Math.floor(Math.random() * 10) % 2;
-				int workingHour = 0;
+				double empCheck = Math.floor(Math.random() * 10) % 3;
+				int empHr = 0;
 				if (empCheck == IS_PRESENT) {
-					workingHour=8;
+					empHr = 8;
+				} else if (empCheck == IS_PART_TIME) {
+					empHr = 4;
+				} else {
+					empHr = 0;
 				}
-				double empSalary = workingHour * SALARY_PER_HOUR;
+				double empSalary = empHr * SALARY_PER_HOUR;
 				
-				System.out.println("Employee has earned "+empSalary+" dollar today.");
+				System.out.println("Emp Wage : "+empSalary);
 
 	}
 
